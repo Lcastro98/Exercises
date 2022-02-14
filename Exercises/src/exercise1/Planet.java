@@ -9,8 +9,11 @@ import java.math.RoundingMode;
 import java.util.UUID;
 
 /**
- *
- * @author lcast
+ * La clase Planet permite instanciar planetas y calcular la atracción gravitacional de dos planetas.
+ * 
+ * @version 1.00.000 2022-02-13, la clase corresponde a la versión 1 del sistema.
+ * 
+ * @author Lorena Castro - Lcastro0398@gmail.com
  */
 public class Planet {
     private UUID id = UUID.randomUUID();
@@ -18,43 +21,14 @@ public class Planet {
     private BigDecimal mass;
     private float diameter;
     private BigDecimal distanceSun;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getMass() {
-        return mass;
-    }
-
-    public void setMass(BigDecimal mass) {
-        this.mass = mass;
-    }
-
-    public float getDiameter() {
-        return diameter;
-    }
-
-    public void setDiameter(float diameter) {
-        this.diameter = diameter;
-    }
-
-    public BigDecimal getDistanceSun() {
-        return distanceSun;
-    }
-
-    public void setDistanceSun(BigDecimal distanceSun) {
-        this.distanceSun = distanceSun;
-    }
-
+    
+    /**
+     * Constructor: permite crear una instancia de la clase Planet.
+     * @param name
+     * @param mass
+     * @param diameter
+     * @param distanceSun 
+     */
     public Planet(String name, BigDecimal mass, float diameter, BigDecimal distanceSun) {
         this.name = name;
         this.mass = mass;
@@ -62,6 +36,92 @@ public class Planet {
         this.distanceSun = distanceSun;
     }
 
+    /**
+     * Método accesor del atributo id.
+     * @return 
+     */
+    public UUID getId() {
+        return id;
+    }
+
+    /**
+     * Método accesor del atributo name.
+     * @return 
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Método modificador del atributo name.
+     * @param name 
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Método accesor del atributo mass (masa del planeta).
+     * @return 
+     */
+    public BigDecimal getMass() {
+        return mass;
+    }
+
+    /**
+     * Método modificador del atributo mass.
+     * @param mass 
+     */
+    public void setMass(BigDecimal mass) {
+        this.mass = mass;
+    }
+
+    /**
+     * Método accesor del atributo diameter (diametro del planeta).
+     * @return 
+     */
+    public float getDiameter() {
+        return diameter;
+    }
+
+    /**
+     * Método modificador del atributo diameter
+     * @param diameter 
+     */
+    public void setDiameter(float diameter) {
+        this.diameter = diameter;
+    }
+
+    /**
+     * Método accesor del atributo distanceSun (distancia del planeta al sol).
+     * @return 
+     */
+    public BigDecimal getDistanceSun() {
+        return distanceSun;
+    }
+
+    /**
+     * Método accesor del atributo distanceSun.
+     * @param distanceSun 
+     */
+    public void setDistanceSun(BigDecimal distanceSun) {
+        this.distanceSun = distanceSun;
+    }
+
+    /**
+     * Método para calcular la atracción gravitacional entre dos cuerpos.
+     * Se debe escribir el nombre del método y entre parentesis los dos planetas para generar el calculo.
+     * ej.:
+     *      GravitationalAttraction(mercury, venus);
+     * 
+     * @param planet1
+     * @param planet2
+     * @return
+     * 
+     * @author Lorena Castro - Lcastro0398@gmail.com
+     * 
+     * @since 1.00.000
+     */
     public static BigDecimal GravitationalAttraction(Planet planet1, Planet planet2){
         BigDecimal G = new BigDecimal("6.67408E-11");
         BigDecimal m1 = planet1.getMass();
