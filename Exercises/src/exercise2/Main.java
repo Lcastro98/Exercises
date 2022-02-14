@@ -5,8 +5,11 @@
 package exercise2;
 
 /**
- *
- * @author lcast
+ * La clase Main permite imprimir la respuesta al ejercicio 2.
+ * 
+ * @version 1.00.000 2022-02-13, la clase corresponde a la versión 1 del sistema.
+ * 
+ * @author Lorena Castro - Lcastro0398@gmail.com
  */
 
 
@@ -15,7 +18,6 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         System.out.println("¿Es posible ejecutar un programa en java que contenga varias clases con métodos main? "
                 + "En caso positivo, ¿cómo se determina el punto de entrada a un programa?");
         

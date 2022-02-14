@@ -5,12 +5,14 @@
 package exercise2;
 
 /**
- *
- * @author lcast
+* La clase Main3 permite dar soporte a la respuesta planteada en la clase Main.
+ * 
+ * @version 1.00.000 2022-02-13, la clase corresponde a la versión 1 del sistema.
+ * 
+ * @author Lorena Castro - Lcastro0398@gmail.com
  */
 public class Main3 {
     public static void main(String[] args) {
-        // TODO code application logic here
         System.out.println("Definitivamente sí se puede");
     }
 }
