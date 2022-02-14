@@ -10,11 +10,15 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 /**
- *
- * @author lcast
+ * La clase Main contiene el método para iniciar el programa.
+ * 
+ * @version 1.00.000 2022-02-14, la clase corresponde a la versión 1 del sistema.
+ * 
+ * @author Lorena Castro - Lcastro0398@gmail.com
  */
 public class Main {
     /**
+     * Permite la interacción con el usuario para que este agregue las características de los vehículos deseados.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

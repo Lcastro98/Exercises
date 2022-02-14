@@ -10,25 +10,50 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- *
- * @author lcast
+ * La clase Boat define los atributos (caracteristicas) propios de la lancha.
+ * 
+ * @version 1.00.000 2022-02-14, la clase corresponde a la versión 1 del sistema.
+ * 
+ * @author Lorena Castro - Lcastro0398@gmail.com
  */
 public class Boat extends Vehicle {
     private boolean engine;
 
+    /**
+     * Constructor: permite crear una instancia de la clase Boat.
+     * @param engine
+     * @param plate
+     * @param registrationDate
+     * @param passengers
+     * @param crew
+     * @param wheels
+     * @param meansTransport 
+     */
     public Boat(boolean engine, String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
         super(plate, registrationDate, passengers, crew, wheels, meansTransport);
         this.engine = engine;
     }
 
+    /**
+     * Método accesor del atributo engine (tiene o no motor).
+     * @return 
+     */
     public boolean isEngine() {
         return engine;
     }
 
+    /**
+     * Método modificador del atributo engine.
+     * @param engine 
+     */
     public void setEngine(boolean engine) {
         this.engine = engine;
     }
 
+    /**
+     * Sobreescribe el método toString para mostrar los datos de la nave de la manera deseada.
+     * @return 
+     */
     @Override
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
