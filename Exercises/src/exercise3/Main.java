@@ -7,24 +7,33 @@ package exercise3;
 import static exercise3.Array.bubble;
 import static exercise3.Array.quicksort;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
- *
- * @author lcast
+ * La clase Main permite al usuario elegir el tipo de ordenamiento para un array aleatorio.
+ * 
+ * @version 1.00.000 2022-02-14, la clase corresponde a la versión 1 del sistema.
+ * 
+ * @author Lorena Castro - Lcastro0398@gmail.com
  */
 public class Main {
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner s = new Scanner(System.in);
         int[] array = new int[10];
         for(int position = 0; position < array.length; position++)
             array[position] = (int)(Math.random()*20)+1;
         System.out.println(Arrays.toString(array));
-        quicksort(array, 0, array.length - 1);
-        System.out.println(Arrays.toString(array));
-        bubble(array);
-        System.out.println(Arrays.toString(array));
+        System.out.println("Digite el número correspondiente a la forma deseada de ordenar el arreglo.\n1. Algoritmo de burbuja\n2. Quicksort");
+        int order = Integer.parseInt(s.nextLine());
+        if (order == 1){
+            quicksort(array, 0, array.length - 1);
+            System.out.println(Arrays.toString(array));
+        }else{
+            bubble(array);
+            System.out.println(Arrays.toString(array));
+        }   
     }
 }
