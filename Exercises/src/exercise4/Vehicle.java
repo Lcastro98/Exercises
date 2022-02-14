@@ -12,13 +12,25 @@ import java.util.Calendar;
  *
  * @author lcast
  */
-public class Vehicle {
+public abstract class Vehicle {
     private String plate;
     private Calendar registrationDate;
     private int passengers;
     private boolean crew;
     private int wheels;
     private String meansTransport;
+    
+    public Vehicle(){
+    }
+    
+    public Vehicle(String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
+        this.plate = plate;
+        this.registrationDate = registrationDate;
+        this.passengers = passengers;
+        this.crew = crew;
+        this.wheels = wheels;
+        this.meansTransport = meansTransport;
+    }
 
     public String getPlate() {
         return plate;
@@ -68,14 +80,6 @@ public class Vehicle {
         this.meansTransport = meansTransport;
     }
 
-    public Vehicle(String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
-        this.plate = plate;
-        this.registrationDate = registrationDate;
-        this.passengers = passengers;
-        this.crew = crew;
-        this.wheels = wheels;
-        this.meansTransport = meansTransport;
-    }
 
     @Override
     public String toString() {

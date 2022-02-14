@@ -40,7 +40,7 @@ public class Main {
         String meansTransport = s.nextLine();
         System.out.println("Por favor, agregue el siguiente vehículo");
         
-        Vehicle vh = new Vehicle(plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport);
+        Vehicle vh = new Vehicle(plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport) {};
         VehicleList.add(vh);
         
         add = add + 1;
