@@ -122,7 +122,7 @@ public class Planet {
      * 
      * @since 1.00.000
      */
-    public static BigDecimal GravitationalAttraction(Planet planet1, Planet planet2){
+    public static BigDecimal GravitationalAttraction(Planet planet1, Planet planet2) {
         BigDecimal G = new BigDecimal("6.67408E-11");
         BigDecimal m1 = planet1.getMass();
         BigDecimal m2 = planet2.getMass();
@@ -144,7 +144,11 @@ public class Planet {
         Planet neptune = new Planet("Neptuno", new BigDecimal("1.024E26"), 49532, new BigDecimal("4.5043E9"));
         Planet pluto = new Planet("Plutón", new BigDecimal("1.29E22"), 2320, new BigDecimal("5.91352E9"));
         
-        System.out.println("La atracción gravitacional de los dos planetas es: "+GravitationalAttraction(mercury, venus)+ "N");
-    }
-    
+        try {
+            System.out.println("La atracción gravitacional de los dos planetas es: "
+                    +GravitationalAttraction(mercury, venus)+ "N");
+        } catch (RuntimeException e){
+            System.out.println("No se pudo realizar el calculo, varificar nombre de los objetos");
+        }
+    }  
 }

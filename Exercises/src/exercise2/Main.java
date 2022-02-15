@@ -21,8 +21,9 @@ public class Main {
         System.out.println("¿Es posible ejecutar un programa en java que contenga varias clases con métodos main? "
                 + "En caso positivo, ¿cómo se determina el punto de entrada a un programa?");
         
-        System.out.println("\nSí, es posible. Para definir la clase principal, vaya al menú File y elija Project Properties. "
-                + "Este cuadro de diálogo ofrece todas las opciones que se pueden cambiar en un proyecto NetBeans. Haga clic en la categoría Run. "
-                + "En esta página, hay una opción de Main Class, allí puede decidir.");
+        System.out.println("""
+                           Sí es posible. Para definir la clase principal, vaya al menú File y elija Project Properties. 
+                           Este cuadro de diálogo ofrece todas las opciones que se pueden cambiar en un proyecto NetBeans. 
+                           Haga clic en la categoría Run. En esta página, hay una opción de Main Class, allí puede decidir.""");
     }
 }

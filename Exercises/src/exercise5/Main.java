@@ -26,10 +26,17 @@ public class Main {
         ArrayList<Vehicle> VehicleList = new ArrayList<>();
         int add = 0;
         System.out.println("Bienvenido al sistema de control del Ferry.");
+        try{
         do
         {
             Scanner s = new Scanner(System.in);
-            System.out.println("Por favor digite el número que corresponde al tipo de vehículo que desea agregar. Las posibles opciones son:\n1. Car.\n2. Motorcycle.\n3. Truck.\n4. Bicycle.\n5. Boat");
+            System.out.println("""
+                               Por favor digite el número que corresponde al tipo de vehículo que desea agregar. Las posibles opciones son:
+                               1. Carro.
+                               2. Moto.
+                               3. Camión.
+                               4. Bicicleta.
+                               5. Lancha""");
             int Vehicle = Integer.parseInt(s.nextLine());
             System.out.println("Ingrese la placa del vehículo");
             String plate = s.nextLine();
@@ -52,7 +59,7 @@ public class Main {
                     System.out.println("Si el carro tiene dos puertas digite 2, si tiene cuatro digite 4");
                     int doors= Integer.parseInt(s.nextLine());
                     
-                    Car v = new Car((doors == 4?false:true), plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport);
+                    Car v = new Car((doors != 4), plate, registrationDate, passengers, (crew != 0), wheels, meansTransport);
                     VehicleList.add(v);
                 }
                 
@@ -60,7 +67,7 @@ public class Main {
                     System.out.println("Si la moto tiene un motor de dos ciclos digite 2, si tiene un motor de cuatro ciclos digite 4");
                     int engineCycles= Integer.parseInt(s.nextLine());
                     
-                    Motorcycle v = new Motorcycle((engineCycles == 4?false:true), plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport);
+                    Motorcycle v = new Motorcycle((engineCycles != 4), plate, registrationDate, passengers, (crew != 0), wheels, meansTransport);
                     VehicleList.add(v);
                 }
                 
@@ -68,7 +75,7 @@ public class Main {
                     System.out.println("Indique la altura del camión");
                     float height= Float.parseFloat(s.nextLine());
                     
-                    Truck v = new Truck(height, plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport);
+                    Truck v = new Truck(height, plate, registrationDate, passengers, (crew != 0), wheels, meansTransport);
                     VehicleList.add(v);
                 }
                     
@@ -76,7 +83,7 @@ public class Main {
                     System.out.println("Indique el número de radios de la bicicleta: ");
                     int spokes= Integer.parseInt(s.nextLine());
                     
-                    Bicycle v = new Bicycle(spokes, plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport);
+                    Bicycle v = new Bicycle(spokes, plate, registrationDate, passengers, (crew != 0), wheels, meansTransport);
                     VehicleList.add(v);
                 }
                 
@@ -84,7 +91,7 @@ public class Main {
                     System.out.println("Si la lancha tiene motor digite 1, de lo contrario digite 0");
                     int engine= Integer.parseInt(s.nextLine());
                     
-                    Boat v = new Boat((engine==0?false:true), plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport);
+                    Boat v = new Boat((engine != 0), plate, registrationDate, passengers, (crew != 0), wheels, meansTransport);
                     VehicleList.add(v);
                 }
             }
@@ -93,8 +100,21 @@ public class Main {
             System.out.println(add);
         
         }
+        
         while (add < 10);
-        System.out.println(VehicleList);
+            System.out.println(VehicleList);
+        }
+        
+        catch (NumberFormatException e){
+            System.out.println("Error: Se ha recibido un caracter no numerico");
+        } 
+        
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("No se ha podido detectar los 3 datos solicitados");   
+        } 
+        
+        finally {
+            System.out.println(VehicleList);
+        }
     }
-    
 }

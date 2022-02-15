@@ -24,34 +24,46 @@ public class Main {
         ArrayList<Vehicle> VehicleList = new ArrayList<>();
         int add = 0;
         System.out.println("Bienvenido al sistema de control del Ferry. Por favor indique los datos de los vehiculos a transportar");
+        try {   
         do{
-        Scanner s = new Scanner(System.in);
-        System.out.println("Ingrese la placa del vehículo");
-        String plate = s.nextLine();
-        System.out.println("Ingrese la fecha de matriculación del vehículo en el formato yyyy-MM-dd: ");
-        String lD = s.nextLine();
-        String[] l = lD.split("-");
-        Calendar registrationDate = Calendar.getInstance();
-        registrationDate.set(Integer.parseInt(l[0]),Integer.parseInt(l[1]), Integer.parseInt(l[2]));
-        System.out.println("Ingrese el número de pasajeros del vehículo");
-        int passengers = Integer.parseInt(s.nextLine());
-        System.out.println("Si el vehículo tiene tripulación digite 1, de lo contrario digite 0");
-        int crew = Integer.parseInt(s.nextLine());
-        System.out.println("Indique la cantidad de ruedas del vehículo");
-        int wheels = Integer.parseInt(s.nextLine());
-        System.out.println("Indique el medio por el cual se desplaza el vehículo");
-        String meansTransport = s.nextLine();
-        System.out.println("Por favor, agregue el siguiente vehículo");
+            Scanner s = new Scanner(System.in);
+            System.out.println("Ingrese la placa del vehículo");
+            String plate = s.nextLine();
+            System.out.println("Ingrese la fecha de matriculación del vehículo en el formato yyyy-MM-dd: ");
+            String lD = s.nextLine();
+            String[] l = lD.split("-");
+            Calendar registrationDate = Calendar.getInstance();
+            registrationDate.set(Integer.parseInt(l[0]),Integer.parseInt(l[1]), Integer.parseInt(l[2]));
+            System.out.println("Ingrese el número de pasajeros del vehículo");
+            int passengers = Integer.parseInt(s.nextLine());
+            System.out.println("Si el vehículo tiene tripulación digite 1, de lo contrario digite 0");
+            int crew = Integer.parseInt(s.nextLine());
+            System.out.println("Indique la cantidad de ruedas del vehículo");
+            int wheels = Integer.parseInt(s.nextLine());
+            System.out.println("Indique el medio por el cual se desplaza el vehículo");
+            String meansTransport = s.nextLine();
+            System.out.println("Por favor, agregue el siguiente vehículo");
         
-        Vehicle vh = new Vehicle(plate, registrationDate, passengers, (crew == 0?false:true), wheels, meansTransport) {};
-        VehicleList.add(vh);
+            Vehicle vh = new Vehicle(plate, registrationDate, passengers, (crew != 0), wheels, meansTransport) {};
+            VehicleList.add(vh);
         
-        add = add + 1;
-        System.out.println(add);
+            add = add + 1;
         
+        } while (add < 10);
+            System.out.println(VehicleList);
+            
+        } 
+        catch (NumberFormatException e){
+            System.out.println("Error: Se ha recibido un caracter no numerico");
+            
+        } 
+        catch (ArrayIndexOutOfBoundsException e){
+            System.out.println("No se ha podido detectar los 3 datos solicitados");
+            
+        } 
+        finally {
+            System.out.println(VehicleList);
         }
-        while (add < 10);
-        System.out.println(VehicleList);
     }
     
 }

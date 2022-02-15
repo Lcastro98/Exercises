@@ -29,7 +29,15 @@ public class Truck extends Vehicle {
      * @param wheels
      * @param meansTransport 
      */
-    public Truck(float height, String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
+    public Truck(
+        float height, 
+        String plate, 
+        Calendar registrationDate, 
+        int passengers, 
+        boolean crew, 
+        int wheels, 
+        String meansTransport) 
+    {
         super(plate, registrationDate, passengers, crew, wheels, meansTransport);
         this.height = height;
     }
@@ -58,7 +66,11 @@ public class Truck extends Vehicle {
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(getRegistrationDate().getTime()); 
-        return "\nInformación del vehiculo\nPlaca: " + getPlate() + "\nFecha de matriculación: " + strDate + "\nNúmero de pasajeros: " + getPassengers() + "\nTripulación: " + (isCrew()==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + getWheels() + "\nMedio por el que se desplaza: " + getMeansTransport() + "Altura delvehículo:" + getHeight();
+        return "\nInformación del vehiculo\nPlaca: " + getPlate() + "\nFecha de matriculación: " 
+                + strDate + "\nNúmero de pasajeros: " + getPassengers() + "\nTripulación: " 
+                + (isCrew()==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + getWheels() 
+                + "\nMedio por el que se desplaza: " + getMeansTransport() + "Altura delvehículo:" 
+                + getHeight();
     } 
     
 }

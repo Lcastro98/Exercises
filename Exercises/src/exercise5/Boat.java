@@ -29,7 +29,15 @@ public class Boat extends Vehicle {
      * @param wheels
      * @param meansTransport 
      */
-    public Boat(boolean engine, String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
+    public Boat(
+        boolean engine, 
+        String plate, 
+       Calendar registrationDate,
+       int passengers, 
+       boolean crew, 
+       int wheels, 
+       String meansTransport) 
+    {
         super(plate, registrationDate, passengers, crew, wheels, meansTransport);
         this.engine = engine;
     }
@@ -58,7 +66,11 @@ public class Boat extends Vehicle {
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(getRegistrationDate().getTime()); 
-        return "\nInformación del vehiculo\nPlaca: " + getPlate() + "\nFecha de matriculación: " + strDate + "\nNúmero de pasajeros: " + getPassengers() + "\nTripulación: " + (isCrew()==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + getWheels() + "\nMedio por el que se desplaza: " + getMeansTransport() + "\n¿Tiene motor?" + (isEngine()==true?"Sí":"No");
+        return "\nInformación del vehiculo\nPlaca: " + getPlate() + "\nFecha de matriculación: " 
+                + strDate + "\nNúmero de pasajeros: " + getPassengers() + "\nTripulación: " 
+                + (isCrew()==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + getWheels() 
+                + "\nMedio por el que se desplaza: " + getMeansTransport() + "\n¿Tiene motor?" 
+                + (isEngine()==true?"Sí":"No");
     }
     
 }

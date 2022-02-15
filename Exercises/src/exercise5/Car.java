@@ -29,7 +29,15 @@ public class Car extends Vehicle {
      * @param wheels
      * @param meansTransport 
      */
-    public Car(boolean doors, String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
+    public Car(
+        boolean doors, 
+        String plate, 
+        Calendar registrationDate, 
+        int passengers, 
+        boolean crew, 
+        int wheels, 
+        String meansTransport) 
+    {
         super(plate, registrationDate, passengers, crew, wheels, meansTransport);
         this.doors = doors;
     }
@@ -58,7 +66,11 @@ public class Car extends Vehicle {
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(getRegistrationDate().getTime()); 
-        return "\nInformación del vehiculo\nPlaca: " + getPlate() + "\nFecha de matriculación: " + strDate + "\nNúmero de pasajeros: " + getPassengers() + "\nTripulación: " + (isCrew()==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + getWheels() + "\nMedio por el que se desplaza: " + getMeansTransport() + "Cantidad de puertas: " + (isDoors()==true?"2":"4");
+        return "\nInformación del vehiculo\nPlaca: " + getPlate() + "\nFecha de matriculación: " 
+                + strDate + "\nNúmero de pasajeros: " + getPassengers() + "\nTripulación: " 
+                + (isCrew()==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + getWheels() 
+                + "\nMedio por el que se desplaza: " + getMeansTransport() + "Cantidad de puertas: " 
+                + (isDoors()==true?"2":"4");
     }
     
 }

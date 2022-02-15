@@ -40,7 +40,13 @@ public abstract class Vehicle {
      * @param wheels
      * @param meansTransport 
      */
-    public Vehicle(String plate, Calendar registrationDate, int passengers, boolean crew, int wheels, String meansTransport) {
+    public Vehicle(
+        String plate, 
+        Calendar registrationDate, 
+        int passengers, boolean crew, 
+        int wheels, 
+        String meansTransport)
+    {
         this.plate = plate;
         this.registrationDate = registrationDate;
         this.passengers = passengers;
@@ -153,10 +159,9 @@ public abstract class Vehicle {
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
         String strDate = dateFormat.format(registrationDate.getTime()); 
-        return "\nInformación del vehiculo\nPlaca: " + plate + "\nFecha de matriculación: " + strDate + "\nNúmero de pasajeros: " + passengers + "\nTripulación" + (crew==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + wheels + "\nMedio por el que se desplaza: " + meansTransport + "\n";
+        return "\nInformación del vehiculo\nPlaca: " + plate + "\nFecha de matriculación: "
+                + strDate + "\nNúmero de pasajeros: " + passengers + "\nTripulación: "
+                + (crew==true?"Presente":"Ausente") + "\nNúmero de ruedas: " + wheels
+                + "\nMedio por el que se desplaza: " + meansTransport + "\n";
     }
-
-
-    
-    
 }

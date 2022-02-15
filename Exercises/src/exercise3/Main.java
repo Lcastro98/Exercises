@@ -26,14 +26,22 @@ public class Main {
         for(int position = 0; position < array.length; position++)
             array[position] = (int)(Math.random()*20)+1;
         System.out.println(Arrays.toString(array));
-        System.out.println("Digite el número correspondiente a la forma deseada de ordenar el arreglo.\n1. Algoritmo de burbuja\n2. Quicksort");
+        
+        try {
+        System.out.println("""
+                           Digite el número correspondiente a la forma deseada de ordenar el arreglo.
+                           1. Algoritmo de burbuja
+                           2. Quicksort""");
         int order = Integer.parseInt(s.nextLine());
-        if (order == 1){
-            quicksort(array, 0, array.length - 1);
-            System.out.println(Arrays.toString(array));
-        }else{
-            bubble(array);
-            System.out.println(Arrays.toString(array));
-        }   
+            if (order == 1){
+                quicksort(array, 0, array.length - 1);
+                System.out.println(Arrays.toString(array));
+            }else{
+                bubble(array);
+                System.out.println(Arrays.toString(array));
+            }   
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Se ha recibido un caracter no numerico");
+        } 
     }
 }

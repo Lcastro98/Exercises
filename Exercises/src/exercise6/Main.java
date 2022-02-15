@@ -22,6 +22,7 @@ public class Main {
     public static void main(String[] args) {
         Vector<Integer> v = new Vector<>();
         
+        try{
         int num = 0;
         Scanner s = new Scanner(System.in);
         do {
@@ -30,7 +31,15 @@ public class Main {
             v.addElement(num);
             
         } while ((v.size() == 1) || (num != v.elementAt(v.size()-2)));
-        System.out.println(v);
+            System.out.println(v);
+        }
+        
+        catch (NumberFormatException e){
+            System.out.println("Error: Se ha recibido un caracter no numerico");
+        }
+        
+        finally{
+            System.out.println(v);}
     } 
              
 }
