@@ -111,8 +111,9 @@ public class Planet {
     /**
      * Método para calcular la atracción gravitacional entre dos cuerpos.
      * Se debe escribir el nombre del método y entre parentesis los dos planetas para generar el calculo.
+     * Se hace uso de la clase BigDecimal para hacer los calculos con los datos reales.
      * ej.:
-     *      GravitationalAttraction(mercury, venus);
+     *      GravitationalAttraction(mercury, venus)
      * 
      * @param planet1
      * @param planet2
